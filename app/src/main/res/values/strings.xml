@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Master Detail Prova 2 App</string>
+    <string name="book_title_hint">Título do livro</string>
+    <string name="author_hint">Autor</string>
+    <string name="pages_hint">Nº de páginas</string>
+    <string name="save_button">Salvar</string>
+    <string name="delete_button">Excluir</string>
 </resources>

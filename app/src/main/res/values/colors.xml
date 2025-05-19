@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="delete_button_background">#FFCC0000</color> <!-- Or your preferred red -->
+    <color name="delete_button_text_color">#FFFFFFFF</color>
 </resources>
