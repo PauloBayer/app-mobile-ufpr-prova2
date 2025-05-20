@@ -52,6 +52,7 @@ dependencies {
 
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.filament.android)
     kapt("androidx.room:room-compiler:2.6.1")
 
     // RecyclerView

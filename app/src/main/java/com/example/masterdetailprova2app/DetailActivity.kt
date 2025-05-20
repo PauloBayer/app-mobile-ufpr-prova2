@@ -24,6 +24,7 @@ class DetailActivity : AppCompatActivity() {
 
         bookId = intent.getIntExtra("id", -1).takeIf { it != -1 }
         bookId?.let { loadBook(it) }
+        vb.tvHeader.text = if (bookId == null) "Adicionar Livro" else "Detalhes do Livro"
 
         vb.btnSave.setOnClickListener { saveBook() }
         vb.btnDelete.setOnClickListener { deleteBook() }
