@@ -17,17 +17,16 @@ class ActivityQuery : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setContentView(R.layout.activity_query)
 
-        // Infla o layout e define o content view
-        vb = ActivityQueryBinding.inflate(layoutInflater)
-        setContentView(vb.root)
-
-        // Aplica insets no ConstraintLayout de id @id/main
-        ViewCompat.setOnApplyWindowInsetsListener(vb.main) { v, insets ->
-            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        vb = ActivityQueryBinding.inflate(layoutInflater)
+        setContentView(vb.root)
 
         dao = BookDAO(this)
 
@@ -39,20 +38,20 @@ class ActivityQuery : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Busca LIKE (ignora maiúsc./minúsc.)
-            val book = dao.all().find { it.title.contains(query, ignoreCase = true) }
+            val book = dao.all().find {
+                it.title.trim().lowercase().contains(query)
+            }
 
             if (book != null) {
-                vb.textNameBook.text   = book.title
+                vb.textNameBook.text = book.title
                 vb.textNameAuthor.text = book.author
                 vb.textPageNumber.text = book.pages.toString()
             } else {
                 Toast.makeText(this, "Livro não encontrado", Toast.LENGTH_SHORT).show()
-                vb.textNameBook.text   = ""
+                vb.textNameBook.text = ""
                 vb.textNameAuthor.text = ""
                 vb.textPageNumber.text = ""
             }
         }
     }
 }
-
