@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         vb.fabAdd.setOnClickListener {
             startActivity(Intent(this, DetailActivity::class.java))
         }
+
+        // 5) Clique no FAB → pesquisar
+        vb.fabSearch.setOnClickListener {
+            startActivity(Intent(this, ActivityQuery::class.java))
+        }
     }
 
     override fun onResume() {

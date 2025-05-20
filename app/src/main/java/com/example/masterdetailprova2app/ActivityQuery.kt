@@ -1,13 +1,13 @@
 package com.example.masterdetailprova2app
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.masterdetailprova2app.dao.BookDAO
 import com.example.masterdetailprova2app.databinding.ActivityQueryBinding
-import android.widget.Toast
 
 class ActivityQuery : AppCompatActivity() {
 
@@ -31,15 +31,16 @@ class ActivityQuery : AppCompatActivity() {
         dao = BookDAO(this)
 
         vb.buttonSearch.setOnClickListener {
-            val query = vb.inputSearch.text.toString().trim()
+            val query = vb.inputSearch.text.toString().trim().lowercase()
 
             if (query.isEmpty()) {
                 Toast.makeText(this, "Digite um título para buscar", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Busca(LIKE)
-            val book = dao.all().find { it.title.contains(query, ignoreCase = true) }
+            val book = dao.all().find {
+                it.title.trim().lowercase().contains(query)
+            }
 
             if (book != null) {
                 vb.textNameBook.text = book.title

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MasterDetailProva2App"
         tools:targetApi="31">
         <activity
-            android:name=".activity_query"
+            android:name=".ActivityQuery"
             android:exported="false" />
         <activity
             android:name=".DetailActivity"
