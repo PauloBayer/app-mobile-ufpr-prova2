@@ -5,4 +5,5 @@
     <string name="pages_hint">Nº de páginas</string>
     <string name="save_button">Salvar</string>
     <string name="delete_button">Excluir</string>
+    <string name="book_cover">Capa do livro</string>
 </resources>
