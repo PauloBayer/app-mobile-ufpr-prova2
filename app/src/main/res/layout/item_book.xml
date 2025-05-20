@@ -19,7 +19,7 @@
             android:layout_height="64dp"
             android:src="@drawable/ic_book"
             android:contentDescription="@string/book_cover"
-            android:tint="?attr/colorPrimary"/>
+            app:tint="?attr/colorPrimary"/>
 
         <!-- Título + autor -->
         <LinearLayout

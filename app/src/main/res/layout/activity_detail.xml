@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Título do livro"/>
-    </com.google.android.material.textfield.TextInputLayout>
+  </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/tilAuthor"
@@ -51,9 +51,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Autor"/>
-    </com.google.android.material.textfield.TextInputLayout>
+  </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+  <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/tilPages"
       style="?attr/textInputOutlinedStyle"
       android:layout_width="0dp"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:hint="Nº de páginas"/>
-    </com.google.android.material.textfield.TextInputLayout>
+  </com.google.android.material.textfield.TextInputLayout>
 
   <Button
       android:id="@+id/btnSave"
